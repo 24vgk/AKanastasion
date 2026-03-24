@@ -125,7 +125,7 @@ async def support(callback: CallbackQuery):
         inline_keyboard=[
             [InlineKeyboardButton(
                 text="Перейти в бот поддержки",
-                url="https://t.me/bot_support_you_do_bot"
+                url="https://t.me/AKanastashn_support_bot"
             )],
             [InlineKeyboardButton(
                 text="Назад в Меню",

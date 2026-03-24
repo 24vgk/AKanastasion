@@ -3,10 +3,9 @@ import logging
 import os
 import random
 from datetime import datetime
-
 from aiogram import Bot, Dispatcher, F, types
 from aiogram.enums import ChatType, ChatAction
-from aiogram.filters import CommandStart
+from aiogram.filters import CommandStart, Command, CommandStart
 from aiogram.filters.callback_data import CallbackData
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto
 from aiogram.exceptions import TelegramBadRequest, TelegramRetryAfter
@@ -377,6 +376,14 @@ async def handle_user_message(message: types.Message):
 
         # Обновляем pinned-карточку
         await update_topic_card(session, thread_id)
+#
+# @dp.message(Command("groupid"), F.chat.type.in_({ChatType.GROUP, ChatType.SUPERGROUP}))
+# async def group_id_handler(message: types.Message):
+#     await message.reply(
+#         f"ID этой группы: <code>{message.chat.id}</code>\n"
+#         f"ID темы: <code>{message.message_thread_id}</code>",
+#         parse_mode="HTML"
+#     )
 
 @dp.message(F.chat.type == ChatType.SUPERGROUP)
 async def handle_admin_reply(message: types.Message):
