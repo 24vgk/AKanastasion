@@ -32,7 +32,7 @@ config: Config = load_config()
 
 def phone_kb():
     return ReplyKeyboardMarkup(
-        keyboard=[[KeyboardButton(text="📱 Поделиться номером.", request_contact=True)]],
+        keyboard=[[KeyboardButton(text="📱 Поделиться номером", request_contact=True)]],
         resize_keyboard=True,
         one_time_keyboard=True,
     )
