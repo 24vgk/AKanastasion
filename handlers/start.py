@@ -53,7 +53,7 @@ async def render_start_menu(message: types.Message, state: FSMContext):
             return
 
         await message.answer(
-            "Привет! Вы ещё не зарегистрированы.\nПожалуйста, пройдите регистрацию:",
+            "Привет!\nВы ещё не зарегистрированы.\nПожалуйста, пройдите регистрацию:",
             reply_markup=keyboard_start
         )
         await state.set_state(Register.choosing_role)
