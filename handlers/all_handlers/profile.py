@@ -71,8 +71,6 @@ async def on_edit_profile(callback: CallbackQuery):
         )
         if active and days_left > 0:
             text += f"\n⏳ Осталось: <b>{days_left} дн.</b>"
-        if not active:
-            text += f"\n\nСтоимость продления: <b>{_fmt_money_rub_kop(cfg.tariff.sub_price_kop)}</b> на {cfg.tariff.sub_duration_days} дн."
 
         await _safe_edit(callback, text, keyboard_profile)
 
